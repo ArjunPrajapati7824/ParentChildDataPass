@@ -1,0 +1,14 @@
+  <div class="col-sm-6" style="margin-left: 600px; margin-top: 20px;">
+<h1>Registration Form</h1>
+
+  <form #formData="ngForm" class="form" (ngSubmit)="addData(formData.value)"  >
+    <label>Name: </label>
+    <input type="text" class="form-control" style="width: 250px;" placeholder="Enter name" ngModel  [(ngModel)]="username" name="username" id="username">
+
+    <label>Contact: </label>
+    <input type="number" class="form-control" style="width: 250px;" placeholder="Enter number" ngModel [(ngModel)]="contact" name="contact">
+    <br>
+    <button class="btn btn-success"  style="height: fit-content; width: fit-content;" type="submit" >Add Data</button>
+  </form>
+</div>
+  <app-child [data]="userData" (updateDataEvent)="updateData($event)"  (sendEvent)="setRefData($event)"></app-child>
